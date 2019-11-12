@@ -1,8 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Admin from './admin'
-
-
-
-ReactDOM.render(<Admin />, document.getElementById('root'));
+import Router from './Router'
+ReactDOM.render(<Router />, document.getElementById('root'));
 

@@ -7,10 +7,16 @@
         background-color: #001529;
     }
     .main{
-        flex: 1;
         height: calc(100vh);
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        background-color: #f1f1f1;
         .content{
-            padding: 20px;
+            flex: 1;
+            background-color: #fff;
+            margin: 20px 0 20px 20px;
+            overflow-y: scroll;
         }
     }
     
