@@ -127,7 +127,8 @@ module.exports = function(webpackEnv) {
             loader:require.resolve(preProcessor),
             options:{
               modifyVars:{
-                '@primary-color': 'red'
+                // '@primary-color': 'red'
+                //'@primary-color': 'pink'
               },
               javascriptEnabled:true
             }
