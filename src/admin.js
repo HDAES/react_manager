@@ -3,6 +3,7 @@ import { Row , Col } from 'antd'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import NavLeft from './components/NavLeft'
+import { Scrollbars } from 'react-custom-scrollbars';
 import './style/common.less'
 class Admin extends Component {
 
@@ -18,9 +19,13 @@ class Admin extends Component {
                </Col>
                <Col span={21} className="main">
                    <Header />
-                   <Row className="content">
-                       {this.props.children}
-                   </Row>
+                    <Row className="content">
+                        <Scrollbars>
+                            {this.props.children}
+                        </Scrollbars>
+                    </Row>
+                   
+                   
                     <Footer />
                </Col>
            </Row>
