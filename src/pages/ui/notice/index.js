@@ -1,5 +1,6 @@
-import React, { Component , Fragment } from 'react';
+import React, { Component } from 'react';
 import { Card , Button , notification  } from 'antd'
+import Ityped from '../../../components/Ityped'
 import '../ui.less'
 class Notice extends Component {
     constructor(props) {
@@ -17,9 +18,11 @@ class Notice extends Component {
         })
     }
     render() { 
+        const texts = '在系统四个角显示通知提醒信息。经常用于以下情况：较为复杂的通知内容。带有交互的通知，给出用户下一步的行动点。系统主动推送。'
         return ( 
-            <Fragment>
-                <Card title="通知提示框" className="Card-warp">
+            <div className="card-list">
+                <Ityped text={texts} />
+                <Card title="通知提示框" className="card-warp" hoverable={true}>
                     <Button type="primary" onClick={this.openNotification.bind(this,'success')}>
                         success
                     </Button>
@@ -33,7 +36,7 @@ class Notice extends Component {
                         warning
                     </Button>   
                 </Card>
-                <Card title="通知提示框" className="Card-warp">
+                <Card title="通知提示框" className="card-warp" hoverable={true}>
                     <Button type="primary" onClick={this.openNotification.bind(this,'success','topRight')}>
                         右上角
                     </Button>
@@ -47,7 +50,7 @@ class Notice extends Component {
                         左上角
                     </Button>
                 </Card>
-            </Fragment>
+            </div>
          );
     }
 }

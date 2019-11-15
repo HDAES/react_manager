@@ -1,11 +1,29 @@
 import React, { Component } from 'react'
-import { Card , Row ,Col } from 'antd'
+import { Card , Row ,Col, Modal } from 'antd'
 
 class Gallery extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
+    openGallery(imgUrl){
+        this.setState({
+            visible:true,
+            imgUrl
+        })
+    }
+
+    handleOk = e => {
+        this.setState({
+            visible: false,
+        });
+    };
+    
+    handleCancel = e => {
+        this.setState({
+            visible: false,
+        });
+    };
     render() { 
         const imgs = [
             ['1.png','2.png','3.png','4.png','5.png'],
@@ -19,7 +37,8 @@ class Gallery extends Component {
             <Card
                 key={i+''+o}
                 style={{marginBottom:10}}
-                cover={<img src={'/gallery/'+item} alt=""/>}
+                onClick={this.openGallery.bind(this,'/gallery/'+item )}
+                cover={<img src={'/gallery/'+item} alt="React"/>}
             >
                 <Card.Meta 
                     title="React Admin"
@@ -46,6 +65,18 @@ class Gallery extends Component {
                         {imgList[4]}
                     </Col>
                 </Row>
+
+                <Modal
+                    width={300}
+                    height={500}
+                    title="Basic Modal"
+                    footer={null}
+                    visible={this.state.visible}
+                    onOk={this.handleOk}
+                    onCancel={this.handleCancel}
+                    >
+                   <img src={this.state.imgUrl} alt="" style={{width:'100%'}}/>
+                </Modal>
             </div>
          );
     }
