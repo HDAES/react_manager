@@ -10,6 +10,7 @@ import Message from './pages/ui/message'
 import Tabs from './pages/ui/tabs'
 import Gallery from './pages/ui/gallery'
 import Carousel from './pages/ui/carousel'
+import Formlogin from './pages/form/login'
 import NoMatch from './pages/nomatch'
 class iRouter extends Component {
    
@@ -28,6 +29,7 @@ class iRouter extends Component {
                                 <Route path="/admin/ui/tabs" component={Tabs} />
                                 <Route path="/admin/ui/gallery" component={Gallery} />
                                 <Route path="/admin/ui/carousel" component={Carousel} />
+                                <Route path="/admin/form/login" component={Formlogin} />
                                 <Route  component={NoMatch}/>
                             </Switch>
                         </Admin>
