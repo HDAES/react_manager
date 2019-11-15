@@ -74,7 +74,7 @@ class Formlogin extends Component {
                             <Link to="#" style={{float:'right'}}>忘记密码</Link>
                         </FormItem>
                         <FormItem>
-                            <Button type="primary" onClick={this.handleSubmit}>登录</Button>
+                            <Button type="primary" onClick={this.handleSubmit}>登录.</Button>
                         </FormItem>
                     </Form>
                 </Card>
