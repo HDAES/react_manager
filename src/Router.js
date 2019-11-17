@@ -12,6 +12,7 @@ import Gallery from './pages/ui/gallery'
 import Carousel from './pages/ui/carousel'
 import Formlogin from './pages/form/login'
 import Register from './pages/form/register'
+import Basic from './pages/tables/basicTable'
 import NoMatch from './pages/nomatch'
 class iRouter extends Component {
    
@@ -32,6 +33,7 @@ class iRouter extends Component {
                                 <Route path="/admin/ui/carousel" component={Carousel} />
                                 <Route path="/admin/form/login" component={Formlogin} />
                                 <Route path="/admin/form/reg" component={Register} />
+                                <Route path="/admin/table/basic" component={Basic} />
                                 <Route  component={NoMatch}/>
                             </Switch>
                         </Admin>
