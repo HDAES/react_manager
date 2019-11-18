@@ -1,0 +1,98 @@
+{
+    "code": 0,
+    "message": "",
+    "data": {
+      "list": [
+        {
+          "id": 1,
+          "userName": "Charles Lopez",
+          "sex": 1,
+          "state": 1,
+          "intersest": 4,
+          "birthday": "2000-01-01",
+          "address": "chongqing"
+        },
+        {
+          "id": 2,
+          "userName": "Donna White",
+          "sex": 2,
+          "state": 3,
+          "intersest": 6,
+          "birthday": "2000-01-01",
+          "address": "chongqing"
+        },
+        {
+          "id": 3,
+          "userName": "Cynthia Taylor",
+          "sex": 2,
+          "state": 3,
+          "intersest": 5,
+          "birthday": "2000-01-01",
+          "address": "chongqing"
+        },
+        {
+          "id": 4,
+          "userName": "Ruth Clark",
+          "sex": 2,
+          "state": 1,
+          "intersest": 1,
+          "birthday": "2000-01-01",
+          "address": "chongqing"
+        },
+        {
+          "id": 5,
+          "userName": "Elizabeth Davis",
+          "sex": 1,
+          "state": 2,
+          "intersest": 5,
+          "birthday": "2000-01-01",
+          "address": "chongqing"
+        },
+        {
+          "id": 6,
+          "userName": "Robert Wilson",
+          "sex": 1,
+          "state": 4,
+          "intersest": 4,
+          "birthday": "2000-01-01",
+          "address": "chongqing"
+        },
+        {
+          "id": 7,
+          "userName": "Carol Robinson",
+          "sex": 2,
+          "state": 2,
+          "intersest": 1,
+          "birthday": "2000-01-01",
+          "address": "chongqing"
+        },
+        {
+          "id": 8,
+          "userName": "Donald Hall",
+          "sex": 2,
+          "state": 1,
+          "intersest": 8,
+          "birthday": "2000-01-01",
+          "address": "chongqing"
+        },
+        {
+          "id": 9,
+          "userName": "Mark Hall",
+          "sex": 2,
+          "state": 4,
+          "intersest": 3,
+          "birthday": "2000-01-01",
+          "address": "chongqing"
+        },
+        {
+          "id": 10,
+          "userName": "Christopher Thomas",
+          "sex": 2,
+          "state": 4,
+          "intersest": 1,
+          "birthday": "2000-01-01",
+          "address": "chongqing"
+        }
+      ]
+    }
+  }

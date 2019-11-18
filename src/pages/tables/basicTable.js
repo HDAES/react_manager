@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Card , Table } from 'antd'
+import { Card , Table, message } from 'antd'
 import axios from './../../axios';
 class BasicTable extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            selectedRowKeys:[]
+         }
     }
 
     componentDidMount() {
@@ -26,6 +28,17 @@ class BasicTable extends Component {
            }
         })
     }
+    handleRowsClick(record){
+       let selectkey = [record.id]
+       this.setState({
+            selectedRowKeys:selectkey
+       })
+       message.info({
+           title:'选中的',
+           content:JSON.stringify(record) 
+       })
+    }
+    
     render() { 
         const columns = [{ 
                 title:'id',
@@ -76,16 +89,45 @@ class BasicTable extends Component {
                 dataIndex:'address'
             }
         ]
+        const { selectedRowKeys } = this.state
+        const rowSelection = {
+            onChange: (selectedRowKeys, selectedRows) => {
+                
+            },
+            type:'radio',
+            selectedRowKeys
+        }
         return ( 
-            <Card title="基础表格">
-                <Table
-                    bordered
-                    dataSource={this.state.dataSource}
-                    columns={columns}
-                    rowKey={record => record.id}
-                    pagination={false}
-                />
-            </Card>
+            <div>
+                <Card title="基础表格" style={{marginBottom:20}}>
+                    <Table
+                        bordered
+                        dataSource={this.state.dataSource}
+                        columns={columns}
+                        rowKey={record => record.id}
+                        pagination={false}
+                    />
+                </Card>
+                <Card title="单选表格">
+                    <Table
+                        bordered
+                        onRow={ (record) =>{
+                                return{
+                                    onClick: () =>{
+                                        this.handleRowsClick(record)
+                                    }
+                                }
+                            }
+                        }
+
+                        rowSelection={rowSelection}
+                        dataSource={this.state.dataSource}
+                        columns={columns}
+                        rowKey={record => record.id}
+                        pagination={false}
+                    />
+                </Card>
+            </div> 
          );
     }
 }
