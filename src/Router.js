@@ -13,6 +13,7 @@ import Carousel from './pages/ui/carousel'
 import Formlogin from './pages/form/login'
 import Register from './pages/form/register'
 import Basic from './pages/tables/basicTable'
+import HighTable from './pages/tables/highTable';
 import NoMatch from './pages/nomatch'
 class iRouter extends Component {
    
@@ -34,7 +35,8 @@ class iRouter extends Component {
                                 <Route path="/admin/form/login" component={Formlogin} />
                                 <Route path="/admin/form/reg" component={Register} />
                                 <Route path="/admin/table/basic" component={Basic} />
-                                <Route  component={NoMatch}/>
+                                <Route path="/admin/table/high" component={HighTable} />
+                                <Route  component={NoMatch}/>high
                             </Switch>
                         </Admin>
                     } />

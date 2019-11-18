@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Card , Table, message } from 'antd'
 import axios from './../../axios';
+import data from './data'
+import Utils from '../../utils/utils'
 class BasicTable extends Component {
     constructor(props) {
         super(props);
@@ -29,10 +31,10 @@ class BasicTable extends Component {
         })
     }
     handleRowsClick(record){
-       let selectkey = [record.id]
-       this.setState({
-            selectedRowKeys:selectkey
-       })
+    //    let selectkey = [record.id]
+    //    this.setState({
+    //         selectedRowKeys:selectkey
+    //    })
        message.info({
            title:'选中的',
            content:JSON.stringify(record) 
@@ -92,9 +94,11 @@ class BasicTable extends Component {
         const { selectedRowKeys } = this.state
         const rowSelection = {
             onChange: (selectedRowKeys, selectedRows) => {
-                
+                this.setState({
+                    selectedRowKeys
+                })
             },
-            type:'radio',
+            type:'checkbox',
             selectedRowKeys
         }
         return ( 
@@ -102,13 +106,13 @@ class BasicTable extends Component {
                 <Card title="基础表格" style={{marginBottom:20}}>
                     <Table
                         bordered
-                        dataSource={this.state.dataSource}
+                        dataSource={data.data.list}
                         columns={columns}
                         rowKey={record => record.id}
                         pagination={false}
                     />
                 </Card>
-                <Card title="单选表格">
+                <Card title="多选表格">
                     <Table
                         bordered
                         onRow={ (record) =>{
@@ -121,10 +125,10 @@ class BasicTable extends Component {
                         }
 
                         rowSelection={rowSelection}
-                        dataSource={this.state.dataSource}
+                        dataSource={data.data.list}
                         columns={columns}
                         rowKey={record => record.id}
-                        pagination={false}
+                        pagination={Utils.pagination(data,() =>{})}
                     />
                 </Card>
             </div> 

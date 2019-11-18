@@ -1,4 +1,4 @@
-{
+ export default {
     "code": 0,
     "message": "",
     "data": {
@@ -50,49 +50,53 @@
         },
         {
           "id": 6,
-          "userName": "Robert Wilson",
+          "userName": "Charles Lopez",
           "sex": 1,
-          "state": 4,
+          "state": 1,
           "intersest": 4,
           "birthday": "2000-01-01",
           "address": "chongqing"
         },
         {
           "id": 7,
-          "userName": "Carol Robinson",
+          "userName": "Donna White",
           "sex": 2,
-          "state": 2,
-          "intersest": 1,
+          "state": 3,
+          "intersest": 6,
           "birthday": "2000-01-01",
           "address": "chongqing"
         },
         {
           "id": 8,
-          "userName": "Donald Hall",
+          "userName": "Cynthia Taylor",
           "sex": 2,
-          "state": 1,
-          "intersest": 8,
+          "state": 3,
+          "intersest": 5,
           "birthday": "2000-01-01",
           "address": "chongqing"
         },
         {
           "id": 9,
-          "userName": "Mark Hall",
+          "userName": "Ruth Clark",
           "sex": 2,
-          "state": 4,
-          "intersest": 3,
+          "state": 1,
+          "intersest": 1,
           "birthday": "2000-01-01",
           "address": "chongqing"
         },
         {
           "id": 10,
-          "userName": "Christopher Thomas",
-          "sex": 2,
-          "state": 4,
-          "intersest": 1,
+          "userName": "Elizabeth Davis",
+          "sex": 1,
+          "state": 2,
+          "intersest": 5,
           "birthday": "2000-01-01",
           "address": "chongqing"
         }
-      ]
+      ],
+      page:1,
+      page_size:10,
+      total:100
+
     }
   }
