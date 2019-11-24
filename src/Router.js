@@ -15,6 +15,7 @@ import Register from './pages/form/register'
 import Basic from './pages/tables/basicTable'
 import HighTable from './pages/tables/highTable';
 import NoMatch from './pages/nomatch'
+import City from './pages/city';
 class iRouter extends Component {
    
     render() { 
@@ -36,6 +37,7 @@ class iRouter extends Component {
                                 <Route path="/admin/form/reg" component={Register} />
                                 <Route path="/admin/table/basic" component={Basic} />
                                 <Route path="/admin/table/high" component={HighTable} />
+                                <Route path="/admin/city" component={City} />
                                 <Route  component={NoMatch}/>high
                             </Switch>
                         </Admin>

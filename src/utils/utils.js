@@ -11,8 +11,8 @@ export default {
             },
             current: data.data.page,
             pageSize:data.data.page_size,
-            total:data.data.total,
-            showTotal:(total)=> `共有${data.data.total}条数据`
+            total:data.data.total_count,
+            showTotal:(total)=> `共有${data.data.total_count}条数据`
         }
     }
 

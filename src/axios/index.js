@@ -22,7 +22,7 @@ export default class Axios{
             loading = document.getElementById('ajaxLoading')
             loading.style.display = 'block'
         }
-        let baseUrl = 'https://www.easy-mock.com/mock/5dd127f5cf8d630c68faf0b5/react'
+        let baseUrl = 'http://rap2api.taobao.org/app/mock/236200/react'
         return new Promise( (resolve,reject) => {
             axios({
                 url:options.url,
