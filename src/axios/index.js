@@ -43,7 +43,7 @@ export default class Axios{
                         reject(res)
                         Modal.info({
                             title:'提示',
-                            content:res.message
+                            content:res.errMsg
                         })
                     }
                 }

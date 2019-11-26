@@ -30,7 +30,7 @@ class NavLeft extends Component {
     }
     render() { 
         return ( 
-            <div>
+            <div className="navleft">
                 <div className="logo">
                     <img src="/assets/logo-ant.svg" alt="logo"/>
                     <h1>Hades MS</h1>

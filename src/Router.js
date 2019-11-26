@@ -16,6 +16,9 @@ import Basic from './pages/tables/basicTable'
 import HighTable from './pages/tables/highTable';
 import NoMatch from './pages/nomatch'
 import City from './pages/city';
+import Order from './pages/order';
+import Common from './common'
+import Detail from './pages/order/detail';
 class iRouter extends Component {
    
     render() { 
@@ -38,9 +41,17 @@ class iRouter extends Component {
                                 <Route path="/admin/table/basic" component={Basic} />
                                 <Route path="/admin/table/high" component={HighTable} />
                                 <Route path="/admin/city" component={City} />
-                                <Route  component={NoMatch}/>high
+                                <Route path="/admin/order" component={Order} />
+                                <Route  component={NoMatch}/>
                             </Switch>
                         </Admin>
+                    } />
+                    <Route path="/common" render={ () =>
+                        <Common>
+                            <Switch>
+                                <Route path="/common/order/detail/:orderId" component={Detail}/>
+                            </Switch>
+                        </Common>
                     } />
                 </App>
             </Router>

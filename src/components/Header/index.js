@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import util from '../../utils/utils'
 import Axios from '../../axios'
+import { Link } from 'react-router-dom'
 import './index.less'
 class Header extends Component {
     constructor(props) {
@@ -25,6 +26,7 @@ class Header extends Component {
 
 
     getWeatherApiData(){
+      
         let city = '重庆'
         let ak = 'ohA7QHfg0BBrpiY4kyuIAAsD'
         Axios.jsonp({
@@ -45,7 +47,7 @@ class Header extends Component {
             <div className="header">
                 <div className="header-top">
                     <span>欢迎: {this.state.name}</span>
-                    {/* <a href="#">退出</a> */}
+                    <Link to="/">退出</Link>
                 </div>
                 <div className="header-botton">
                     <div className="breadcrumbs">首页</div>
