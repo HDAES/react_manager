@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import util from '../../utils/utils'
-import Axios from '../../axios'
+//import Axios from '../../axios'
 import { Link } from 'react-router-dom'
 import './index.less'
 class Header extends Component {
@@ -27,19 +27,19 @@ class Header extends Component {
 
     getWeatherApiData(){
       
-        let city = '重庆'
-        let ak = 'ohA7QHfg0BBrpiY4kyuIAAsD'
-        Axios.jsonp({
-            url:'http://api.map.baidu.com/telematics/v3/weather?location='+encodeURIComponent(city)+'&output=json&ak='+ak
-        }).then( (res) =>{
-            if(res.status === 'success'){
-                let weathers = res.results[0].weather_data[0]
-                this.setState({
-                    dayPictureUrl:weathers.dayPictureUrl,
-                    weather:weathers.weather
-                })
-            }
-        })
+        //let city = '重庆'
+        //let ak = 'ohA7QHfg0BBrpiY4kyuIAAsD'
+        // Axios.jsonp({
+        //     url:'http://api.map.baidu.com/telematics/v3/weather?location='+encodeURIComponent(city)+'&output=json&ak='+ak
+        // }).then( (res) =>{
+        //     if(res.status === 'success'){
+        //         let weathers = res.results[0].weather_data[0]
+        //         this.setState({
+        //             dayPictureUrl:weathers.dayPictureUrl,
+        //             weather:weathers.weather
+        //         })
+        //     }
+        // })
     }
 
     render() { 
