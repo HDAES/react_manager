@@ -13,6 +13,7 @@ class User extends Component {
         selectedRows:'',
         tableLoading: false,
         editVisible:false,
+        infoVisible:false,
         userInfo:'',
         title:''
      }
@@ -79,6 +80,16 @@ class User extends Component {
                 userInfo:'',
                 title:'创建员工',
             })
+        }else if(type === 'info'){
+            if(selectedRows){
+                this.setState({
+                    infoVisible:true,
+                    userInfo:selectedRows[0]
+                })
+            }else{
+                message.error('请先选择需要编辑的用户')
+            }
+            
         }
         
     }
@@ -103,7 +114,7 @@ class User extends Component {
         console.log(this.userForm.props.form.getFieldsValue())
     }
     render() { 
-        const { selectedRowKeys , editVisible } = this.state
+        const { selectedRowKeys , editVisible , infoVisible , userInfo } = this.state
         const columns = [{
             title:'id',
             dataIndex:'user_id'
@@ -142,6 +153,10 @@ class User extends Component {
                 })
             }
         }
+        const formItemLayout = {
+            labelCol:{span:5},
+            wrapperCol:{span:15}
+        }
         return ( 
             <div className="user">
                <Card>
@@ -150,7 +165,7 @@ class User extends Component {
                <Card>
                    <Button type="primary" onClick={() => this.handleOperating('create')} icon="plus"> 创建员工</Button>
                    <Button type="primary" style={{margin:'0 20px'}} onClick={() =>{ this.handleOperating('edit')}} icon="edit"> 编辑员工</Button>
-                   <Button type="primary"> 员工详情</Button>
+                   <Button type="primary" onClick={() =>{ this.handleOperating('info')}}> 员工详情</Button>
                    <Button type="danger" ghost style={{margin:'0 20px'}}> 删除员工</Button>
 
                    <Table
@@ -178,9 +193,35 @@ class User extends Component {
                     onOk={this.handleSubmit}
                 >
                     <EditModel  userInfo={this.state.userInfo}   wrappedComponentRef={ (inst) =>{this.userForm = inst}}/>
-
                 </Modal>
                
+
+               <Modal
+                    width={600}
+                    title="用户详情"
+                    visible={infoVisible}
+                    onCancel={ () =>{ this.setState({infoVisible:false})}}
+                    onOk={ () =>{ this.setState({infoVisible:false})}}
+               >
+                   <Form>
+                       <FormItem label="姓名" {...formItemLayout}>
+                            { userInfo.user_name}
+                       </FormItem>
+                       <FormItem label="性别" {...formItemLayout}>
+                        { userInfo.sex === 1?'男':'女'}
+                       </FormItem>
+                       <FormItem label="状态" {...formItemLayout}>
+                            { userInfo.status }
+                       </FormItem>
+                       <FormItem label="生日" {...formItemLayout}>
+                       { userInfo.birthday }
+                       </FormItem>
+                       <FormItem label="联系地址" {...formItemLayout}>
+                       { userInfo.address }
+                       </FormItem>
+                       
+                   </Form>
+               </Modal>
             </div>
          );
     }
