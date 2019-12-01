@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import util from '../../utils/utils'
 //import Axios from '../../axios'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 import './index.less'
 class Header extends Component {
     constructor(props) {
@@ -50,7 +51,7 @@ class Header extends Component {
                     <Link to="/">退出</Link>
                 </div>
                 <div className="header-botton">
-                    <div className="breadcrumbs">首页</div>
+                    <div className="breadcrumbs">{this.props.menuName}</div>
                     <div className="weather">
                         <span>{this.state.now}</span>
                         <span className="weather-img">
@@ -63,5 +64,9 @@ class Header extends Component {
          );
     }
 }
- 
-export default Header;
+ const mapStateToProps = state =>{
+     return {
+        menuName:state.menuName
+     }
+ }
+export default connect(mapStateToProps)(Header);
