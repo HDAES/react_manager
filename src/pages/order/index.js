@@ -97,7 +97,7 @@ class Order extends Component {
         if(selectedRowKeys.length === 0){
             message.error('请先选择')
         }else{
-            window.open('/common/order/detail/'+ selectedId)
+            window.open('/#/common/order/detail/'+ selectedId)
         }
     }
     render() { 

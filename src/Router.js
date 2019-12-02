@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch ,Redirect} from "react-router-dom";
+import { HashRouter as Router, Route, Switch ,Redirect} from "react-router-dom";
 import App from "./App";
 import Admin from "./admin";
 import Button from "./pages/ui/button";
@@ -26,6 +26,7 @@ import Pie from "./pages/echarts/pie";
 import Line from "./pages/echarts/line";
 import PermissionUser from "./pages/permission";
 import Home from "./pages/home";
+import Rich from "./pages/rich";
 class iRouter extends Component {
   render() {
     return (
@@ -61,6 +62,7 @@ class iRouter extends Component {
                     <Route path="/charts/pie" component={Pie} />
                     <Route path="/charts/line" component={Line} />
                     <Route path="/permission" component={PermissionUser} />
+                    <Route path="/rich" component={Rich}/>
                     <Route path="/home" component={Home} />
                     <Redirect to="/home" />
                     <Route component={NoMatch} />
